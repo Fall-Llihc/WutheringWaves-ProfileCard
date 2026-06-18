@@ -25,19 +25,9 @@
   </div>
 </header>
 
-<!-- HERO BANNER (desktop only) -->
-<section class="hero" id="profile">
-  <svg viewBox="0 0 200 200" class="hero__mark" aria-hidden="true">
-    <polygon points="100,10 170,70 150,180 100,160 50,180 30,70" class="hero__mark-shape"/>
-    <path d="M100 10 L130 65 L100 85 L70 65 Z" class="hero__mark-shape hero__mark-shape--inner"/>
-  </svg>
-  <div class="hero__content">
-    <p class="hero__eyebrow">PROFILE CARD</p>
-    <h1 class="hero__title">Yapper sejati. Glacio enjoyer.<br>Ngopi dulu sebelum combat.</h1>
-  </div>
-</section>
-
-<main class="grid">
+<main class="grid" id="profile">
+  <!-- HERO ARTWORK (desktop only, fades to white behind the cards below) -->
+  <div class="hero-bg" aria-hidden="true"></div>
 
   <!-- PROFILE CARD -->
   <article class="card card--profile">
@@ -118,16 +108,18 @@
     </ul>
   </article>
 
+</main>
+
+<div class="section">
   <!-- JOKI -->
-  <article class="card card--joki card--full">
+  <article class="card card--joki">
     <h2 class="card__title"><span class="card__title-jp">代行</span> Open Joki Wuthering Waves</h2>
     <p class="about-text">
       Buka jasa joki Wuthering Waves. DM lewat Twitter buat nego harga & detail orderan.
     </p>
     <a class="cta-btn" href="https://x.com/Palih" target="_blank" rel="noopener noreferrer">DM via Twitter →</a>
   </article>
-
-</main>
+</div>
 
 <footer class="footer">
   <a class="footer__social" href="https://x.com/Palih" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X">
