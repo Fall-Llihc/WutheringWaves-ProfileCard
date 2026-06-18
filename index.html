@@ -8,7 +8,7 @@
 <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700&family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700&family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&family=Geist:wght@500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -41,17 +41,18 @@
       </svg>
     </div>
 
-    <h2 class="card__brand">
-      <span class="card__kanji">氷狐</span>
-      <span class="card__romaji">HYOUKO</span>
-    </h2>
-    <p class="card__name">Palih</p>
+    <p class="card__eyebrow"><span class="card__kanji">氷狐</span> HYOUKO</p>
+    <h2 class="card__name">Palih</h2>
+    <a class="card__handle" href="https://x.com/Palih" target="_blank" rel="noopener noreferrer">@Palih</a>
 
-    <ul class="badges">
-      <li class="badge">♂ 20+</li>
-      <li class="badge">Glacio Main</li>
-      <li class="badge">Combat Focus</li>
-      <li class="badge badge--accent">Open Joki</li>
+    <div class="card__divider"></div>
+
+    <a class="cta-btn cta-btn--block" href="https://x.com/Palih" target="_blank" rel="noopener noreferrer">+ Follow di Twitter</a>
+
+    <ul class="tag-row">
+      <li><span class="tag-dot"></span>♂ 20+</li>
+      <li><span class="tag-dot"></span>Glacio Main</li>
+      <li><span class="tag-dot"></span>Combat Focus</li>
     </ul>
 
     <p class="about-text">
@@ -59,31 +60,15 @@
       sela-selanya ngabisin waktu mikirin mobil atau nyeruput kopi. Gameplay-nya fokus ke combat —
       bukan tipe yang ngoceh lore panjang lebar.
     </p>
-
-    <div class="info-grid">
-      <div class="info-row">
-        <span class="info-row__label">Twitter</span>
-        <a class="info-row__value info-row__value--link" href="https://x.com/Palih" target="_blank" rel="noopener noreferrer">@Palih</a>
-      </div>
-      <div class="info-row">
-        <span class="info-row__label">Game Name</span>
-        <span class="info-row__value">Palih</span>
-      </div>
-      <div class="info-row">
-        <span class="info-row__label">Game UID</span>
-        <span class="info-row__value info-row__value--copy">
-          <span id="uid-text">904822673</span>
-          <button class="copy-btn" data-copy="904822673" aria-label="Salin UID">
-            <svg viewBox="0 0 24 24" class="copy-btn__icon"><rect x="8" y="8" width="12" height="12" rx="1.5"/><path d="M16 8V5.5A1.5 1.5 0 0 0 14.5 4H5.5A1.5 1.5 0 0 0 4 5.5v9A1.5 1.5 0 0 0 5.5 16H8"/></svg>
-          </button>
-        </span>
-      </div>
-    </div>
   </article>
 
   <!-- BYF -->
   <article class="card card--byf">
-    <h2 class="card__title"><span class="card__title-jp">良ければ</span> Before You Follow</h2>
+    <h2 class="card__title">
+      <svg viewBox="0 0 24 24" class="card__title-icon"><circle cx="12" cy="12" r="9"/><path d="M8 12.5l2.5 2.5L16 9"/></svg>
+      Before You Follow
+      <span class="card__title-jp">良ければ</span>
+    </h2>
     <ul class="trait-list trait-list--byf">
       <li>Sesekali ngomong kasar / kotor</li>
       <li>JBJB-an itu hal biasa di mentionan</li>
@@ -98,7 +83,11 @@
 
   <!-- DNI -->
   <article class="card card--dni">
-    <h2 class="card__title"><span class="card__title-jp">遠慮して</span> Do Not Interact</h2>
+    <h2 class="card__title">
+      <svg viewBox="0 0 24 24" class="card__title-icon"><circle cx="12" cy="12" r="9"/><path d="M9 9l6 6M15 9l-6 6"/></svg>
+      Do Not Interact
+      <span class="card__title-jp">遠慮して</span>
+    </h2>
     <ul class="trait-list trait-list--dni">
       <li>Bukan homophobic, tapi gamau diarahin ke hal gay (kecuali emang jokes jomok)</li>
       <li>Hate kesukaan orang lain</li>
@@ -110,10 +99,112 @@
 
 </main>
 
+<!-- SERVICE RECORD (desktop only — placeholder until real account stats are provided) -->
+<div class="section section--desktop-only">
+  <div class="section-header">
+    <svg viewBox="0 0 24 24" class="section-header__icon"><path d="M3 17l5-5 4 4 8-9"/><path d="M14 7h6v6"/></svg>
+    <h2 class="section-header__title">Service Record</h2>
+    <span class="example-tag">Contoh</span>
+  </div>
+  <div class="stat-row">
+    <div class="stat-box">
+      <span class="stat-box__label">Union Level</span>
+      <span class="stat-box__value">65</span>
+      <div class="stat-box__bar"><div class="stat-box__bar-fill" style="width:85%"></div></div>
+      <span class="stat-box__sub">85% to 66</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-box__label">Data Bank</span>
+      <span class="stat-box__value">21</span>
+      <span class="stat-box__sub">Max Level Reached</span>
+    </div>
+    <div class="stat-box">
+      <span class="stat-box__label">UID</span>
+      <span class="stat-box__value stat-box__value--uid">
+        904822673
+        <button class="copy-btn" data-copy="904822673" aria-label="Salin UID">
+          <svg viewBox="0 0 24 24" class="copy-btn__icon"><rect x="8" y="8" width="12" height="12" rx="1.5"/><path d="M16 8V5.5A1.5 1.5 0 0 0 14.5 4H5.5A1.5 1.5 0 0 0 4 5.5v9A1.5 1.5 0 0 0 5.5 16H8"/></svg>
+        </button>
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- ACTIVE ROSTER (desktop only — placeholder lineup) -->
+<div class="section section--desktop-only">
+  <div class="section-header">
+    <svg viewBox="0 0 24 24" class="section-header__icon"><circle cx="9" cy="8" r="3.2"/><circle cx="17" cy="9" r="2.4"/><path d="M3.5 19c0-3.3 2.5-5.5 5.5-5.5s5.5 2.2 5.5 5.5M15 19c0-2.2 1.6-3.8 4-3.8"/></svg>
+    <h2 class="section-header__title">Active Roster</h2>
+    <span class="example-tag">Contoh</span>
+  </div>
+  <div class="roster-row">
+    <article class="roster-card">
+      <div class="roster-card__avatar roster-card__avatar--glacio">SK</div>
+      <p class="roster-card__name">Shorekeeper</p>
+      <p class="roster-card__meta">Level 90 · Glacio</p>
+    </article>
+    <article class="roster-card">
+      <div class="roster-card__avatar roster-card__avatar--spectro">JH</div>
+      <p class="roster-card__name">Jinhsi</p>
+      <p class="roster-card__meta">Level 90 · Spectro</p>
+    </article>
+    <article class="roster-card">
+      <div class="roster-card__avatar roster-card__avatar--fusion">CL</div>
+      <p class="roster-card__name">Changli</p>
+      <p class="roster-card__meta">Level 80 · Fusion</p>
+    </article>
+    <article class="roster-card">
+      <div class="roster-card__avatar roster-card__avatar--glacio">SH</div>
+      <p class="roster-card__name">Shorekeeper II</p>
+      <p class="roster-card__meta">Level 80 · Glacio</p>
+    </article>
+  </div>
+</div>
+
+<!-- HIGHLIGHTS + FORMATIONS (desktop only — placeholder content) -->
+<div class="section section--desktop-only">
+  <div class="split-row">
+    <div>
+      <div class="section-header">
+        <svg viewBox="0 0 24 24" class="section-header__icon"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M10 9.5l5 2.5-5 2.5z"/></svg>
+        <h2 class="section-header__title">Highlights</h2>
+        <span class="example-tag">Contoh</span>
+      </div>
+      <article class="highlight-card">
+        <span class="highlight-card__play">▶</span>
+        <span class="highlight-card__duration">1:45</span>
+        <p class="highlight-card__title">Tower of Adversity Floor 6 — Full Clear</p>
+      </article>
+    </div>
+    <div>
+      <div class="section-header">
+        <svg viewBox="0 0 24 24" class="section-header__icon"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2 19c0-3 2.7-5 6-5s6 2 6 5M12 19c0-2.5 2.2-4 5-4s5 1.5 5 4"/></svg>
+        <h2 class="section-header__title">Formations</h2>
+        <span class="example-tag">Contoh</span>
+      </div>
+      <article class="formation-card">
+        <div class="formation-card__head">
+          <span class="formation-card__name">Main: Glacio Burst</span>
+          <span class="formation-card__tag">Primary</span>
+        </div>
+        <div class="formation-card__members">
+          <span class="formation-card__avatar formation-card__avatar--glacio">SK</span>
+          <span class="formation-card__avatar formation-card__avatar--spectro">JH</span>
+          <span class="formation-card__avatar formation-card__avatar--fusion">CL</span>
+        </div>
+      </article>
+    </div>
+  </div>
+</div>
+
 <div class="section">
   <!-- JOKI -->
   <article class="card card--joki">
-    <h2 class="card__title"><span class="card__title-jp">代行</span> Open Joki Wuthering Waves</h2>
+    <h2 class="card__title">
+      <svg viewBox="0 0 24 24" class="card__title-icon"><path d="M5 13l4 4L19 7"/></svg>
+      Open Joki Wuthering Waves
+      <span class="card__title-jp">代行</span>
+    </h2>
     <p class="about-text">
       Buka jasa joki Wuthering Waves. DM lewat Twitter buat nego harga & detail orderan.
     </p>
