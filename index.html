@@ -13,15 +13,34 @@
 </head>
 <body>
 
-<div class="frost" aria-hidden="true"></div>
+<!-- TOP BAR (desktop tabs live here) -->
+<header class="topbar">
+  <div class="topbar__inner">
+    <span class="topbar__brand"><span class="topbar__kanji">氷狐</span> HYOUKO</span>
+    <nav class="topbar__nav" aria-label="Navigasi utama">
+      <a class="topbar__tab is-active" href="#profile">Profile</a>
+      <span class="topbar__tab is-disabled">Stats <em>Soon</em></span>
+      <span class="topbar__tab is-disabled">Teams <em>Soon</em></span>
+    </nav>
+  </div>
+</header>
 
-<main class="card">
+<!-- HERO BANNER (desktop only) -->
+<section class="hero" id="profile">
+  <svg viewBox="0 0 200 200" class="hero__mark" aria-hidden="true">
+    <polygon points="100,10 170,70 150,180 100,160 50,180 30,70" class="hero__mark-shape"/>
+    <path d="M100 10 L130 65 L100 85 L70 65 Z" class="hero__mark-shape hero__mark-shape--inner"/>
+  </svg>
+  <div class="hero__content">
+    <p class="hero__eyebrow">PROFILE CARD</p>
+    <h1 class="hero__title">Yapper sejati. Glacio enjoyer.<br>Ngopi dulu sebelum combat.</h1>
+  </div>
+</section>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="hero__corner hero__corner--tl" aria-hidden="true"></div>
-    <div class="hero__corner hero__corner--br" aria-hidden="true"></div>
+<main class="grid">
 
+  <!-- PROFILE CARD -->
+  <article class="card card--profile">
     <div class="avatar">
       <svg viewBox="0 0 120 120" class="avatar__mask" aria-hidden="true">
         <polygon points="60,8 100,42 90,108 60,96 30,108 20,42" class="avatar__mask-shape"/>
@@ -32,13 +51,11 @@
       </svg>
     </div>
 
-    <p class="hero__eyebrow">PROFILE CARD</p>
-    <h1 class="hero__brand">
-      <span class="hero__kanji">氷狐</span>
-      <span class="hero__romaji">HYOUKO</span>
-    </h1>
-    <p class="hero__name">Palih</p>
-    <p class="hero__tagline">Yapper sejati. Glacio enjoyer. Ngopi dulu sebelum combat.</p>
+    <h2 class="card__brand">
+      <span class="card__kanji">氷狐</span>
+      <span class="card__romaji">HYOUKO</span>
+    </h2>
+    <p class="card__name">Palih</p>
 
     <ul class="badges">
       <li class="badge">♂ 20+</li>
@@ -46,11 +63,13 @@
       <li class="badge">Combat Focus</li>
       <li class="badge badge--accent">Open Joki</li>
     </ul>
-  </section>
 
-  <!-- QUICK INFO -->
-  <section class="panel">
-    <h2 class="panel__title"><span class="panel__title-jp">情報</span> Quick Info</h2>
+    <p class="about-text">
+      Suka yapping di Twitter soal kehidupan, game, sampe anime. Glacio enjoyer & char mommy collector,
+      sela-selanya ngabisin waktu mikirin mobil atau nyeruput kopi. Gameplay-nya fokus ke combat —
+      bukan tipe yang ngoceh lore panjang lebar.
+    </p>
+
     <div class="info-grid">
       <div class="info-row">
         <span class="info-row__label">Twitter</span>
@@ -70,21 +89,11 @@
         </span>
       </div>
     </div>
-  </section>
-
-  <!-- ABOUT -->
-  <section class="panel">
-    <h2 class="panel__title"><span class="panel__title-jp">自己紹介</span> Tentang Gue</h2>
-    <p class="about-text">
-      Suka yapping di Twitter soal kehidupan, game, sampe anime. Glacio enjoyer & char mommy collector,
-      sela-selanya ngabisin waktu mikirin mobil atau nyeruput kopi. Gameplay-nya fokus ke combat —
-      bukan tipe yang ngoceh lore panjang lebar. Bisa serius bahas meta, bisa juga random ngocol bareng mutuals.
-    </p>
-  </section>
+  </article>
 
   <!-- BYF -->
-  <section class="panel">
-    <h2 class="panel__title"><span class="panel__title-jp">良ければ</span> Before You Follow</h2>
+  <article class="card card--byf">
+    <h2 class="card__title"><span class="card__title-jp">良ければ</span> Before You Follow</h2>
     <ul class="trait-list trait-list--byf">
       <li>Sesekali ngomong kasar / kotor</li>
       <li>JBJB-an itu hal biasa di mentionan</li>
@@ -95,11 +104,11 @@
       <li>Suka repost leak & fanart char favorit</li>
       <li>Apapun bisa jadi bahan bercanda</li>
     </ul>
-  </section>
+  </article>
 
   <!-- DNI -->
-  <section class="panel">
-    <h2 class="panel__title"><span class="panel__title-jp">遠慮して</span> Do Not Interact</h2>
+  <article class="card card--dni">
+    <h2 class="card__title"><span class="card__title-jp">遠慮して</span> Do Not Interact</h2>
     <ul class="trait-list trait-list--dni">
       <li>Bukan homophobic, tapi gamau diarahin ke hal gay (kecuali emang jokes jomok)</li>
       <li>Hate kesukaan orang lain</li>
@@ -107,26 +116,42 @@
       <li>Kelewat serius / baperan</li>
       <li>Gabisa bedain real life sama dunia virtual (Twitter)</li>
     </ul>
-  </section>
+  </article>
 
   <!-- JOKI -->
-  <section class="panel panel--accent">
-    <h2 class="panel__title"><span class="panel__title-jp">代行</span> Open Joki Wuthering Waves</h2>
+  <article class="card card--joki card--full">
+    <h2 class="card__title"><span class="card__title-jp">代行</span> Open Joki Wuthering Waves</h2>
     <p class="about-text">
       Buka jasa joki Wuthering Waves. DM lewat Twitter buat nego harga & detail orderan.
     </p>
     <a class="cta-btn" href="https://x.com/Palih" target="_blank" rel="noopener noreferrer">DM via Twitter →</a>
-  </section>
-
-  <footer class="footer">
-    <a class="footer__social" href="https://x.com/Palih" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X">
-      <svg viewBox="0 0 24 24" class="footer__icon"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.1l-5.6-7.3L4.2 22H1l8.1-9.3L0.9 2H8.2l5 6.7L18.9 2Zm-1.2 18h1.9L7.4 4H5.4l12.3 16Z"/></svg>
-      <span>@Palih</span>
-    </a>
-    <p class="footer__credit">氷狐 — Hyouko profile card</p>
-  </footer>
+  </article>
 
 </main>
+
+<footer class="footer">
+  <a class="footer__social" href="https://x.com/Palih" target="_blank" rel="noopener noreferrer" aria-label="Twitter / X">
+    <svg viewBox="0 0 24 24" class="footer__icon"><path d="M18.9 2H22l-7.6 8.7L23.3 22h-7.1l-5.6-7.3L4.2 22H1l8.1-9.3L0.9 2H8.2l5 6.7L18.9 2Zm-1.2 18h1.9L7.4 4H5.4l12.3 16Z"/></svg>
+    <span>@Palih</span>
+  </a>
+  <p class="footer__credit">氷狐 — Hyouko profile card</p>
+</footer>
+
+<!-- BOTTOM NAV (mobile only) -->
+<nav class="bottomnav" aria-label="Navigasi utama (mobile)">
+  <a class="bottomnav__tab is-active" href="#profile">
+    <svg viewBox="0 0 24 24" class="bottomnav__icon"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg>
+    Profile
+  </a>
+  <span class="bottomnav__tab is-disabled">
+    <svg viewBox="0 0 24 24" class="bottomnav__icon"><path d="M4 19V11M11 19V5M18 19v-7"/></svg>
+    Stats
+  </span>
+  <span class="bottomnav__tab is-disabled">
+    <svg viewBox="0 0 24 24" class="bottomnav__icon"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2 19c0-3 2.7-5 6-5s6 2 6 5M12 19c0-2.5 2.2-4 5-4s5 1.5 5 4"/></svg>
+    Teams
+  </span>
+</nav>
 
 <script src="js/main.js"></script>
 </body>
