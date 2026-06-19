@@ -1,16 +1,26 @@
 :root {
-  --bg: #f7f5f2;
+  --bg: #faf9f8;
   --surface: #ffffff;
-  --surface-sunken: #efebe7;
-  --ink: #1a1716;
-  --ink-muted: #6b625d;
-  --red: #c4242b;
-  --red-deep: #8f1a1f;
-  --red-soft: rgba(196, 36, 43, 0.08);
-  --red-soft-strong: rgba(196, 36, 43, 0.16);
-  --border: rgba(26, 23, 22, 0.09);
-  --border-strong: rgba(26, 23, 22, 0.18);
-  --shadow: 0 4px 20px rgba(26, 23, 22, 0.05), 0 2px 4px rgba(26, 23, 22, 0.03);
+  --surface-sunken: #eeecea;
+  --ink: #17151a;
+  --ink-muted: #65616a;
+  --red: #c1232b;
+  --red-deep: #7e1318;
+  --red-soft: rgba(193, 35, 43, 0.08);
+  --red-soft-strong: rgba(193, 35, 43, 0.16);
+  --black-soft: #1c1a1f;
+  --border: rgba(20, 18, 22, 0.09);
+  --border-strong: rgba(20, 18, 22, 0.18);
+  --shadow: 0 4px 20px rgba(20, 18, 22, 0.06), 0 2px 4px rgba(20, 18, 22, 0.04);
+
+  /* hero scrim: independent of the actual photo so any image swap still blends smoothly */
+  --hero-scrim: linear-gradient(
+    180deg,
+    rgba(15, 10, 11, 0.04) 0%,
+    rgba(15, 10, 11, 0.1) 30%,
+    rgba(50, 14, 17, 0.42) 68%,
+    var(--bg) 96%
+  );
 
   --font-display: 'Zen Old Mincho', serif;
   --font-heading: 'Rajdhani', sans-serif;
@@ -47,17 +57,19 @@ a { color: inherit; }
   position: sticky;
   top: 0;
   z-index: 10;
-  background: rgba(247, 245, 242, 0.92);
+  background: rgba(250, 249, 248, 0.92);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--border);
 }
 .topbar__inner {
   max-width: 1080px;
+  height: 64px;
   margin: 0 auto;
-  padding: 14px 24px;
+  padding: 0 24px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  box-sizing: border-box;
 }
 .topbar__brand {
   font-family: var(--font-heading);
@@ -97,12 +109,17 @@ a { color: inherit; }
   border-radius: 999px;
 }
 
-/* ===== HERO ARTWORK (revealed behind the card grid on desktop only) ===== */
-.hero-bg { display: none; }
-
-/* ===== GRID / CARDS ===== */
-.grid {
+/* ===== HERO (full-bleed artwork on desktop; plain stacked cards on mobile) ===== */
+.hero {
   position: relative;
+}
+.hero__media,
+.hero__scrim {
+  display: none;
+}
+.hero__cards {
+  position: relative;
+  z-index: 1;
   max-width: 1080px;
   margin: 24px auto 0;
   padding: 0 24px 24px;
@@ -414,7 +431,7 @@ a { color: inherit; }
   height: 200px;
   border-radius: 16px;
   overflow: hidden;
-  background: linear-gradient(135deg, var(--ink) 0%, #3a3030 100%);
+  background: linear-gradient(135deg, var(--black-soft) 0%, var(--red-deep) 130%);
   display: flex;
   align-items: flex-end;
   padding: 18px;
@@ -534,40 +551,55 @@ a { color: inherit; }
 .bottomnav__icon { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 
 /* ===== RESPONSIVE: DESKTOP CONCEPT ===== */
-/* Mirrors the original Stitch concept: one frame where key art fades to white
-   behind a 3-column card row, instead of mobile's plain stacked cards. */
+/* Full-screen key art behind the top section, with the 3-card row floating
+   near the bottom edge. Mobile keeps the plain stacked cards, no hero art. */
 @media (min-width: 880px) {
   body { padding-bottom: 0; }
   .topbar__nav { display: flex; }
   .bottomnav { display: none; }
   .section--desktop-only { display: block; }
 
-  .grid {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 20px;
-    margin-top: 24px;
-    padding: 300px 24px 24px;
-    border-radius: 16px;
-    overflow: hidden;
-    background: var(--surface);
-    box-shadow: var(--shadow);
+  .hero {
+    min-height: calc(100vh - 64px);
+    display: flex;
+    align-items: flex-end;
   }
 
-  .hero-bg {
+  .hero__media {
     display: block;
     position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 360px;
+    inset: 0;
     background-image: url('../assets/hero-bg.jpg');
     background-size: cover;
-    background-position: top center;
-    z-index: 0;
+    background-position: center 22%;
   }
+
+  /* Independent of the photo itself, so swapping hero-bg.jpg for any other
+     image still fades smoothly into the page background at the bottom. */
+  .hero__scrim {
+    display: block;
+    position: absolute;
+    inset: 0;
+    background: var(--hero-scrim);
+  }
+
+  .hero__cards {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 20px;
+    width: 100%;
+    max-width: 1040px;
+    margin: 0 auto;
+    padding: 0 24px 64px;
+  }
+
+  .card { padding: 22px; }
+  .card--profile .avatar { width: 72px; height: 72px; margin-bottom: 12px; }
+  .card--profile .avatar__mask { width: 44px; height: 44px; }
+  .card--profile .card__name { font-size: 24px; }
+  .card--profile .card__handle { margin-bottom: 14px; }
 }
 
 @media (max-width: 420px) {
-  .grid { padding: 0 16px 16px; }
+  .hero__cards { padding: 0 16px 16px; }
   .card { padding: 20px; }
 }
