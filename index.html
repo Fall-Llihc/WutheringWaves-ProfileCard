@@ -25,9 +25,14 @@
   </div>
 </header>
 
-<main class="grid" id="profile">
-  <!-- HERO ARTWORK (desktop only, fades to white behind the cards below) -->
-  <div class="hero-bg" aria-hidden="true"></div>
+<main id="profile">
+<section class="hero">
+  <!-- HERO ARTWORK: full-bleed on desktop, with an independent gradient scrim
+       (not baked into the image) so the fade-to-bg stays smooth no matter what image is used -->
+  <div class="hero__media" aria-hidden="true"></div>
+  <div class="hero__scrim" aria-hidden="true"></div>
+
+  <div class="hero__cards">
 
   <!-- PROFILE CARD -->
   <article class="card card--profile">
@@ -97,6 +102,8 @@
     </ul>
   </article>
 
+  </div>
+</section>
 </main>
 
 <!-- SERVICE RECORD (desktop only — placeholder until real account stats are provided) -->
