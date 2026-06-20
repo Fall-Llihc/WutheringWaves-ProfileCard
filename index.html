@@ -16,11 +16,25 @@
 <!-- TOP BAR (desktop tabs live here) -->
 <header class="topbar">
   <div class="topbar__inner">
-    <span class="topbar__brand"><span class="topbar__kanji">氷狐</span> HYOUKO</span>
+    <span class="topbar__brand">
+      <svg viewBox="0 0 24 24" class="topbar__brand-icon" aria-hidden="true">
+        <path d="M4 5h4l2 3 2-3h4l-3 4 4 5h-4l-3-4-3 4H3l4-5z"/>
+      </svg>
+      <span class="topbar__kanji">氷狐</span> HYOUKO
+    </span>
     <nav class="topbar__nav" aria-label="Navigasi utama">
-      <a class="topbar__tab is-active" href="#profile">Profile</a>
-      <span class="topbar__tab is-disabled">Stats <em>Soon</em></span>
-      <span class="topbar__tab is-disabled">Teams <em>Soon</em></span>
+      <a class="topbar__tab is-active" href="#profile">
+        <svg viewBox="0 0 24 24" class="topbar__icon" aria-hidden="true"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg>
+        Profile
+      </a>
+      <span class="topbar__tab is-disabled">
+        <svg viewBox="0 0 24 24" class="topbar__icon" aria-hidden="true"><path d="M4 19V11M11 19V5M18 19v-7"/></svg>
+        Stats <em>Soon</em>
+      </span>
+      <span class="topbar__tab is-disabled">
+        <svg viewBox="0 0 24 24" class="topbar__icon" aria-hidden="true"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2 19c0-3 2.7-5 6-5s6 2 6 5M12 19c0-2.5 2.2-4 5-4s5 1.5 5 4"/></svg>
+        Teams <em>Soon</em>
+      </span>
     </nav>
   </div>
 </header>
@@ -105,6 +119,22 @@
   </div>
 </section>
 </main>
+
+<!-- ABOUT (desktop only — bio lives here so the profile card stays compact above) -->
+<div class="section section--desktop-only">
+  <article class="card card--about">
+    <h2 class="card__title">
+      <svg viewBox="0 0 24 24" class="card__title-icon"><circle cx="12" cy="12" r="9"/><path d="M12 8v.01M11 12h1v5h1"/></svg>
+      About
+      <span class="card__title-jp">紹介</span>
+    </h2>
+    <p class="about-text">
+      Suka yapping di Twitter soal kehidupan, game, sampe anime. Glacio enjoyer & char mommy collector,
+      sela-selanya ngabisin waktu mikirin mobil atau nyeruput kopi. Gameplay-nya fokus ke combat —
+      bukan tipe yang ngoceh lore panjang lebar.
+    </p>
+  </article>
+</div>
 
 <!-- SERVICE RECORD (desktop only — placeholder until real account stats are provided) -->
 <div class="section section--desktop-only">
