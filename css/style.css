@@ -226,6 +226,21 @@ a { color: inherit; }
   color: var(--ink-muted);
 }
 .card__eyebrow .card__kanji { font-family: var(--font-display); font-size: 15px; color: var(--red); }
+.card__eyebrow--joki {
+  letter-spacing: 0.06em;
+  color: var(--red);
+  font-size: 11px;
+  margin-bottom: 10px;
+}
+.card__eyebrow-icon {
+  width: 14px;
+  height: 14px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
 .card__name {
   margin: 0;
   font-family: var(--font-name);
@@ -305,6 +320,7 @@ a { color: inherit; }
 .cta-btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 8px;
   padding: 11px 22px;
   font-family: var(--font-heading);
@@ -316,9 +332,34 @@ a { color: inherit; }
   text-decoration: none;
   border-radius: 10px;
   box-shadow: 0 2px 0 var(--red-deep);
-  transition: filter 0.15s ease;
+  transition: filter 0.15s ease, background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  border: 1px solid transparent;
 }
 .cta-btn:hover { filter: brightness(1.08); }
+.cta-btn__icon {
+  width: 16px;
+  height: 16px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  flex-shrink: 0;
+}
+.cta-btn--half { flex: 1; padding: 10px 12px; font-size: 13px; }
+.cta-btn--ghost {
+  background: transparent;
+  color: var(--red);
+  border-color: var(--red);
+  box-shadow: none;
+}
+.cta-btn--ghost:hover { background: var(--red-soft); filter: none; }
+
+.cta-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
 
 /* ===== DESKTOP-ONLY SECTIONS (Service Record / Roster / Highlights / Formations) ===== */
 .section--desktop-only { display: none; }
@@ -504,6 +545,11 @@ a { color: inherit; }
   padding: 3px 9px;
   border-radius: 999px;
 }
+.formation-card__tag--alt {
+  color: var(--ink-muted);
+  background: var(--surface-sunken);
+}
+.formation-stack { display: flex; flex-direction: column; gap: 12px; }
 .formation-card__members { display: flex; gap: 10px; }
 .formation-card__avatar {
   width: 36px;
@@ -578,9 +624,10 @@ a { color: inherit; }
   .section--desktop-only { display: block; }
 
   .hero {
-    min-height: calc(100vh - 64px);
+    min-height: 620px;
+    padding-top: 24px;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
   }
 
   .hero__media {
@@ -607,7 +654,7 @@ a { color: inherit; }
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 40px 64px;
+    padding: 0 40px 40px;
     align-items: stretch;
   }
 
